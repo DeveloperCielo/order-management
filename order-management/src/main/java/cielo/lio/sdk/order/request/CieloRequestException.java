@@ -1,7 +1,7 @@
 package cielo.lio.sdk.order.request;
 
 /**
- * Just an exception that can be catch by the app
+ * An exception that can be catch by the app
  */
 public class CieloRequestException extends Exception {
 	private static final long serialVersionUID = 1593203297542665974L;

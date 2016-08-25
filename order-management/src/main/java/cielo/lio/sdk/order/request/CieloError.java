@@ -1,8 +1,5 @@
 package cielo.lio.sdk.order.request;
 
-/**
- * Just represents an error sent by Cielo; most of time, client errors.
- */
 public class CieloError {
 	private final Integer code;
 	private final String detail;

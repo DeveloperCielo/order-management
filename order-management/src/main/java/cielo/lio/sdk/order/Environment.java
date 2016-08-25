@@ -10,12 +10,12 @@ public enum Environment implements cielo.lio.sdk.Environment {
 	/**
 	 * Environment.PRODUCTION
 	 */
-	PRODUCTION("https://cielotms.m4u.com.br/order-management/api/v1"),
+	PRODUCTION("https://api.cielo.com.br/order-management/api/v2"),
 
 	/**
 	 * Environment.SANDBOX
 	 */
-	SANDBOX("https://cielotms.stg.m4u.com.br/order-management/api/v1");
+	SANDBOX("https://api.cielo.com.br/sandbox/order-management/api/v2");
 
 	private final String url;
 
