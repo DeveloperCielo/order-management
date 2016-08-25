@@ -26,26 +26,23 @@ import cielo.lio.sdk.order.request.CieloError;
 import cielo.lio.sdk.order.request.CieloRequestException;
 
 public class OrderManagement {
-	private String accessToken;
-	private String clientId;
 	private Environment environment;
-
+	private String accessToken;
 	private String merchantId;
 
-	public OrderManagement(String merchantId, String clientId, String accessToken) {
-		this(merchantId, clientId, accessToken, cielo.lio.sdk.order.Environment.PRODUCTION);
+	public OrderManagement(String merchantId, String accessToken) {
+		this(merchantId, accessToken, cielo.lio.sdk.order.Environment.PRODUCTION);
 	}
 
-	public OrderManagement(String merchantId, String clientId, String accessToken, Environment environment) {
+	public OrderManagement(String merchantId, String accessToken, Environment environment) {
 		this.merchantId = merchantId;
-		this.clientId = clientId;
 		this.accessToken = accessToken;
 		this.environment = environment;
 	}
 
 	public Order createOrder(Order order) throws CieloRequestException, IOException {
 		String url = environment.getUrl() + "/orders";
-		
+
 		System.out.println(url);
 
 		HttpPost request = new HttpPost(url);
@@ -198,7 +195,6 @@ public class OrderManagement {
 		request.addHeader("Content-Type", "application/json");
 		request.addHeader("User-Agent", "Cielo-Lio SDK");
 
-		request.addHeader("client-id", clientId);
 		request.addHeader("access-token", accessToken);
 		request.addHeader("Merchant-Id", merchantId);
 
